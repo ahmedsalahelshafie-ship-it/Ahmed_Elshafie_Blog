@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Algorithm That Detects Hidden Data</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: #0f172a;
+        }
+
+        .article-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        .formula {
+            background-color: #f1f5f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #3b82f6;
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            background-color: #f1f5f9;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="category-tag">Machine Learning</div>
+            <h1>The Algorithm That Detects Hidden Data</h1>
+            <div class="meta">
+                <span>📅 Feb 7, 2026</span>
+                <span>⏱️ 9 min read</span>
+                <span>👁️ 7.8K views</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p>Expectation Maximization (EM) is a widely used method in statistics and machine learning that helps find the best estimates of hidden or missing information in data. Imagine you have incomplete data, and you want to figure out the underlying details. EM is a clever way to do that.</p>
+
+            <h2>What Is EM?</h2>
+
+            <p>EM is an iterative algorithm designed to estimate parameters of statistical models, especially when the data has missing or hidden parts. For example, if you have a group of data points but don't know which group each point belongs to, EM can help you guess both the groups and the characteristics of each group.</p>
+
+            <p>Mathematically, EM tries to maximize the likelihood function:</p>
+
+            <div class="formula">
+                L(θ) = P(data | θ)
+            </div>
+
+            <p>where θ represents the model parameters (like means and variances). Since some data is missing or hidden, EM iteratively maximizes the expected log-likelihood. The algorithm works in two repeating steps: Expectation (E-step) and Maximization (M-step).</p>
+
+            <div class="highlight-box">
+                <p><strong>E-step (Expectation):</strong> Estimate the missing data based on the current guess of the model parameters.</p>
+                <p><strong>M-step (Maximization):</strong> Update the model parameters to maximize the likelihood of the observed data given the estimated missing information.</p>
+            </div>
+
+            <h2>A Simple Example</h2>
+
+            <p>Consider you have a mixture of two types of candies in a jar, but you don't know the exact proportion of each type. You pick some candies randomly but do not know which candy came from which type. EM helps you estimate the proportion of each type in the jar. Suppose the data points are coming from two normal distributions with unknown means μ₁, μ₂ and variances σ₁², σ₂². EM alternates:</p>
+
+            <p><strong>E-step:</strong> Guess the probability each candy belongs to type 1 or type 2 using the current parameters.</p>
+
+            <p><strong>M-step:</strong> Update μ₁, μ₂, σ₁², σ₂² using these guesses to better fit the data.</p>
+
+            <p>This process repeats until the estimates converge.</p>
+
+            <h2>Why Is EM Useful?</h2>
+
+            <p>EM is especially useful when direct calculation of parameters is hard because of incomplete data or latent variables. It is widely used in fields like:</p>
+
+            <ul>
+                <li>Machine Learning</li>
+                <li>Computer Vision</li>
+                <li>Natural Language Processing</li>
+            </ul>
+
+            <p>In wireless communications systems, EM can be used to estimate channel parameters when some signals are missing. It helps improve signal detection and decoding. In addition, EM algorithms aid in device localization and environment sensing by handling noisy or partial data.</p>
+
+            <p>One powerful application of EM is enhancing Direction of Arrival (DoA) estimation when used with the MUSIC algorithm. MUSIC requires knowing the number of incoming signal sources, which is not always available. EM can help estimate this number by treating it as a latent variable and refining it iteratively based on the observed signal covariance.</p>
+
+            <h2>Takeaway</h2>
+
+            <p>EM is a powerful technique to handle uncertainty and incomplete data by iteratively refining estimates. Its flexibility and simplicity have made it a cornerstone in many modern data-driven applications, helping systems learn from imperfect information and make smarter decisions.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+        </div>
+    </div>
+</body>
+</html>
