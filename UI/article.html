@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding WiFi 6E - WirelessHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="article-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">📡</span>
+                <h1>Wireless<span class="highlight">Hub</span></h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search tutorials, guides...">
+                <button class="search-btn">🔍</button>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+                <button class="cta-btn">Subscribe</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Article Header -->
+    <article class="article-page">
+        <div class="article-container">
+
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <a href="#">WiFi</a>
+                <span>›</span>
+                <span>Understanding WiFi 6E</span>
+            </nav>
+
+            <!-- Article Header -->
+            <header class="article-header">
+                <div class="article-tags">
+                    <span class="tag wifi">WiFi</span>
+                    <span class="tag">Technology</span>
+                </div>
+                <h1 class="article-title">Understanding WiFi 6E: What You Need to Know</h1>
+                <p class="article-subtitle">The latest WiFi standard brings 6GHz spectrum support. Here's how it affects your network performance and what devices you need.</p>
+
+                <div class="article-meta-bar">
+                    <div class="author-info">
+                        <div class="author-avatar">👨‍💻</div>
+                        <div>
+                            <div class="author-name">John Smith</div>
+                            <div class="publish-date">Published Jan 15, 2025 • 5 min read</div>
+                        </div>
+                    </div>
+                    <div class="article-actions">
+                        <button class="action-btn">🔖 Save</button>
+                        <button class="action-btn">🔗 Share</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Table of Contents -->
+            <aside class="toc">
+                <h3>📋 Table of Contents</h3>
+                <ul>
+                    <li><a href="#intro">Introduction to WiFi 6E</a></li>
+                    <li><a href="#benefits">Key Benefits</a></li>
+                    <li><a href="#spectrum">The 6GHz Spectrum</a></li>
+                    <li><a href="#devices">Compatible Devices</a></li>
+                    <li><a href="#setup">Setting Up WiFi 6E</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+            </aside>
+
+            <!-- Article Content -->
+            <div class="article-content">
+
+                <section id="intro">
+                    <h2>🚀 Introduction to WiFi 6E</h2>
+                    <p>WiFi 6E is the latest evolution of wireless technology, extending WiFi 6 capabilities into the 6GHz frequency band. This expansion provides more channels, less interference, and faster speeds for compatible devices.</p>
+
+                    <div class="info-box">
+                        <div class="info-icon">💡</div>
+                        <div>
+                            <strong>Quick Fact:</strong> WiFi 6E adds 1200 MHz of additional spectrum, which is more than double the current 2.4GHz and 5GHz bands combined!
+                        </div>
+                    </div>
+
+                    <p>The "E" in WiFi 6E stands for "Extended," referring to the extension into the 6GHz band. While WiFi 6 already brought significant improvements like OFDMA and MU-MIMO, WiFi 6E takes it further by operating in a cleaner, less congested frequency range.</p>
+                </section>
+
+                <section id="benefits">
+                    <h2>✨ Key Benefits of WiFi 6E</h2>
+
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">⚡</div>
+                            <h3>Faster Speeds</h3>
+                            <p>Up to 2Gbps for individual devices with cleaner channels</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🎯</div>
+                            <h3>Lower Latency</h3>
+                            <p>Better for gaming, video calls, and real-time applications</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">📶</div>
+                            <h3>Less Interference</h3>
+                            <p>Brand new spectrum means fewer competing networks</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🔗</div>
+                            <h3>More Capacity</h3>
+                            <p>Connect more devices without performance degradation</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="spectrum">
+                    <h2>📡 The 6GHz Spectrum Explained</h2>
+                    <p>The 6GHz band operates from 5.925 GHz to 7.125 GHz, providing 14 additional 80MHz channels or 7 extra 160MHz channels. This is a game-changer for high-bandwidth applications.</p>
+
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>2.4GHz</th>
+                                    <th>5GHz</th>
+                                    <th>6GHz (New!)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Channels</td>
+                                    <td>11-14</td>
+                                    <td>24-45</td>
+                                    <td>59</td>
+                                </tr>
+                                <tr>
+                                    <td>Max Speed</td>
+                                    <td>~600 Mbps</td>
+                                    <td>~2.4 Gbps</td>
+                                    <td>~9.6 Gbps</td>
+                                </tr>
+                                <tr>
+                                    <td>Congestion</td>
+                                    <td>Very High</td>
+                                    <td>Moderate</td>
+                                    <td>Very Low</td>
+                                </tr>
+                                <tr>
+                                    <td>Range</td>
+                                    <td>Best</td>
+                                    <td>Good</td>
+                                    <td>Shorter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="warning-box">
+                        <div class="warning-icon">⚠️</div>
+                        <div>
+                            <strong>Important Note:</strong> 6GHz signals don't penetrate walls as well as lower frequencies. You may need additional access points for full coverage in larger homes.
+                        </div>
+                    </div>
+                </section>
+
+                <section id="devices">
+                    <h2>📱 Compatible Devices</h2>
+                    <p>To take advantage of WiFi 6E, you'll need both a WiFi 6E router and compatible client devices. Here's what's currently available:</p>
+
+                    <h3>Routers & Access Points</h3>
+                    <ul class="device-list">
+                        <li>ASUS ROG Rapture GT-AXE11000</li>
+                        <li>Netgear Nighthawk RAXE500</li>
+                        <li>TP-Link Archer AXE200</li>
+                        <li>Ubiquiti UniFi 6E</li>
+                    </ul>
+
+                    <h3>Client Devices</h3>
+                    <ul class="device-list">
+                        <li>iPhone 15 Pro and newer</li>
+                        <li>Samsung Galaxy S23 series</li>
+                        <li>Latest generation laptops with Intel AX411 or Qualcomm FastConnect 6900</li>
+                        <li>Steam Deck</li>
+                    </ul>
+                </section>
+
+                <section id="setup">
+                    <h2>🔧 Setting Up WiFi 6E</h2>
+                    <p>Setting up a WiFi 6E network is straightforward. Here's a step-by-step guide:</p>
+
+                    <div class="steps-list">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Update Router Firmware</h4>
+                                <p>Ensure your router has the latest firmware to support all WiFi 6E features.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Enable 6GHz Band</h4>
+                                <p>Access router settings and enable the 6GHz radio. Choose a unique SSID or enable band steering.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Configure Security</h4>
+                                <p>WiFi 6E requires WPA3 security. Set a strong password and enable encryption.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Connect Devices</h4>
+                                <p>Connect your WiFi 6E compatible devices to the new network and enjoy faster speeds!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Example Router Configuration</span>
+                            <button class="copy-btn">📋 Copy</button>
+                        </div>
+                        <pre><code>// Sample router config for WiFi 6E
+{
+  "ssid": "MyNetwork-6E",
+  "band": "6GHz",
+  "channel": "auto",
+  "channelWidth": "160MHz",
+  "security": "WPA3",
+  "password": "SecurePassword123!",
+  "beamforming": true,
+  "muMimo": true,
+  "ofdma": true
+}</code></pre>
+                    </div>
+                </section>
+
+                <section id="conclusion">
+                    <h2>🎯 Conclusion</h2>
+                    <p>WiFi 6E represents a significant leap forward in wireless technology. With its expanded spectrum, reduced interference, and improved performance, it's ideal for bandwidth-intensive applications like 4K/8K streaming, VR gaming, and large file transfers.</p>
+
+                    <p>While adoption is still growing, investing in WiFi 6E now will future-proof your network as more devices gain support. Just remember to consider the shorter range of 6GHz signals when planning your network layout.</p>
+
+                    <div class="success-box">
+                        <div class="success-icon">✅</div>
+                        <div>
+                            <strong>Ready to upgrade?</strong> Check if your devices support WiFi 6E and consider upgrading your router to take advantage of this cutting-edge technology!
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Article Footer -->
+            <footer class="article-footer">
+                <div class="article-tags-footer">
+                    <strong>Tags:</strong>
+                    <a href="#">WiFi</a>
+                    <a href="#">WiFi 6E</a>
+                    <a href="#">6GHz</a>
+                    <a href="#">Networking</a>
+                </div>
+                <div class="article-share">
+                    <strong>Share this article:</strong>
+                    <button>Twitter</button>
+                    <button>LinkedIn</button>
+                    <button>Facebook</button>
+                </div>
+            </footer>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h2>📚 Related Articles</h2>
+                <div class="related-grid">
+                    <div class="related-card">
+                        <div class="related-tag">WiFi</div>
+                        <h3>WiFi 6 vs WiFi 6E: What's the Difference?</h3>
+                        <p>3 min read</p>
+                    </div>
+                    <div class="related-card">
+                        <div class="related-tag">Security</div>
+                        <h3>WPA3 Security Explained</h3>
+                        <p>5 min read</p>
+                    </div>
+                    <div class="related-card">
+                        <div class="related-tag">Troubleshooting</div>
+                        <h3>Optimizing WiFi Performance</h3>
+                        <p>8 min read</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About WirelessHub</h4>
+                    <p>Making wireless technology simple and accessible for everyone.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">All Guides</a></li>
+                        <li><a href="#">Get Started</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">WiFi</a></li>
+                        <li><a href="#">Bluetooth</a></li>
+                        <li><a href="#">5G</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">YouTube</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireless 101 - Tech Made Simple </title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="UI/styles.css">
+    <style>
+        .card-tag.wireless {
+            background-color: #e0f2fe;
+            color: #0284c7;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Dark Mode Toggle -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">📡</span>
+                <h1>Wireless<span class="highlight">Hub</span></h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search tutorials, guides...">
+                <button class="search-btn">🔍</button>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">🌙</button> 
+                <button class="cta-btn">Subscribe</button>
+            </div>
+        </nav>
+        <div class="nav-categories">
+            <a href="#all" class="category-link active">All</a>
+            <a href="#wifi" class="category-link">WiFi</a>
+            <a href="#bluetooth" class="category-link">Bluetooth</a>
+            <a href="#5g" class="category-link">5G/LTE</a>
+            <a href="#iot" class="category-link">IoT</a>
+            <a href="#security" class="category-link">Security</a>
+            <a href="#troubleshooting" class="category-link">Troubleshooting</a>
+        </div>
+    </header>
+
+    <!-- Hero/Featured Article -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="article-card">
+                <div class="card-tag wireless">Wireless</div>
+                <h3 class="card-title">What Really Happens Between Transmission and Reception?</h3>
+                <p class="card-excerpt">Understanding the messy reality of wireless communication beyond textbook models.</p>
+                <div class="card-meta">
+                    <span>12 min read</span>
+                    <span>•</span>
+                    <span>Jan 20, 2025</span>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Main Content Grid -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+
+                <!-- Main Articles Column -->
+                <div class="articles-column">
+                    <h2 class="section-title">Latest Articles</h2>
+
+
+                    <div class="article-card">
+                        <div class="card-tag wireless">Wireless</div>
+                        <h3 class="card-title"><a href="Articles/wireless-transmission-reception.html">What Really Happens Between Transmission and Reception?</a></h3>
+                        <p class="card-excerpt">Understanding the messy reality of wireless communication beyond textbook models.</p>
+                        <div class="card-meta">
+                            <span>12 min read</span>
+                            <span>•</span>
+                            <span>Jan 20, 2025</span>
+                        </div>
+                    </div>
+                    <div class="article-card">
+                        <div class="card-tag wifi">WiFi</div>
+                        <h3 class="card-title">Understanding WiFi 6E: What You Need to Know</h3>
+                        <p class="card-excerpt">The latest WiFi standard brings 6GHz spectrum support. Here's how it affects your network performance.</p>
+                        <div class="card-meta">
+                            <span>5 min read</span>
+                            <span>•</span>
+                            <span>Jan 15, 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <div class="card-tag security">Security</div>
+                        <h3 class="card-title">5 Common WiFi Security Mistakes to Avoid</h3>
+                        <p class="card-excerpt">Protect your wireless network from unauthorized access with these essential security practices.</p>
+                        <div class="card-meta">
+                            <span>8 min read</span>
+                            <span>•</span>
+                            <span>Jan 12, 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <div class="card-tag bluetooth">Bluetooth</div>
+                        <h3 class="card-title">Bluetooth 5.3: Everything About the Latest Version</h3>
+                        <p class="card-excerpt">Improved range, better audio quality, and enhanced power efficiency - discover the new features.</p>
+                        <div class="card-meta">
+                            <span>6 min read</span>
+                            <span>•</span>
+                            <span>Jan 10, 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <div class="card-tag troubleshooting">Troubleshooting</div>
+                        <h3 class="card-title">Why Is My WiFi Slow? 12 Ways to Fix It</h3>
+                        <p class="card-excerpt">Diagnose and solve common WiFi speed issues with our comprehensive troubleshooting guide.</p>
+                        <div class="card-meta">
+                            <span>10 min read</span>
+                            <span>•</span>
+                            <span>Jan 8, 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <div class="card-tag iot">IoT</div>
+                        <h3 class="card-title">Setting Up a Smart Home: Wireless Basics</h3>
+                        <p class="card-excerpt">Learn the fundamentals of connecting and managing IoT devices in your home network.</p>
+                        <div class="card-meta">
+                            <span>12 min read</span>
+                            <span>•</span>
+                            <span>Jan 5, 2025</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+
+                    <!-- Trending Posts -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">🔥 Trending This Week</h3>
+                        <div class="trending-list">
+                            <div class="trending-item">
+                                <span class="trending-number">1</span>
+                                <div>
+                                    <h4>Best WiFi Routers 2025</h4>
+                                    <span class="trending-views">25K views</span>
+                                </div>
+                            </div>
+                            <div class="trending-item">
+                                <span class="trending-number">2</span>
+                                <div>
+                                    <h4>Mesh vs Traditional Router</h4>
+                                    <span class="trending-views">18K views</span>
+                                </div>
+                            </div>
+                            <div class="trending-item">
+                                <span class="trending-number">3</span>
+                                <div>
+                                    <h4>5G Home Internet Review</h4>
+                                    <span class="trending-views">15K views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter Signup -->
+                    <div class="sidebar-widget newsletter">
+                        <h3 class="widget-title">📬 Weekly Newsletter</h3>
+                        <p>Get the latest wireless tech tips delivered to your inbox.</p>
+                        <input type="email" placeholder="Your email" class="newsletter-input">
+                        <button class="newsletter-btn">Subscribe</button>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">📚 Popular Guides</h3>
+                        <ul class="quick-links">
+                            <li><a href="#">WiFi Setup Checklist</a></li>
+                            <li><a href="#">Router Placement Guide</a></li>
+                            <li><a href="#">Network Speed Testing</a></li>
+                            <li><a href="#">Wireless Standards Explained</a></li>
+                            <li><a href="#">Signal Boosting Tips</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Ad Space -->
+                    <div class="sidebar-widget ad-widget">
+                        <div class="ad-placeholder">
+                            <p>📢 Advertisement</p>
+                        </div>
+                    </div>
+
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Showcase -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">📶</div>
+                    <h3>WiFi Technology</h3>
+                    <p>45 articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🔵</div>
+                    <h3>Bluetooth</h3>
+                    <p>28 articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📡</div>
+                    <h3>5G & LTE</h3>
+                    <p>32 articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🏠</div>
+                    <h3>Smart Home</h3>
+                    <p>38 articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🔐</div>
+                    <h3>Security</h3>
+                    <p>41 articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🔧</div>
+                    <h3>Troubleshooting</h3>
+                    <p>52 articles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About WirelessHub</h4>
+                    <p>Making wireless technology simple and accessible for everyone.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">All Guides</a></li>
+                        <li><a href="#">Get Started</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">WiFi</a></li>
+                        <li><a href="#">Bluetooth</a></li>
+                        <li><a href="#">5G</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">YouTube</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="UI/script.js"></script>
+</body>
+</html>
