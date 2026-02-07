@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Bins in MIMO Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: #0f172a;
+        }
+
+        .formula {
+            background-color: #f1f5f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #3b82f6;
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            background-color: #f1f5f9;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="category-tag">MIMO Systems</div>
+            <h1>Angular Bins in MIMO Systems</h1>
+            <div class="meta">
+                <span>📅 Feb 7, 2026</span>
+                <span>⏱️ 11 min read</span>
+                <span>👁️ 4.7K views</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p>In wireless MIMO systems such as 5G, beamforming (BF) plays a central role in improving link quality, spatial selectivity, and user multiplexing. A practical implementation of BF relies on the concept of angular bins, which discretize the angular space into a finite set of beam directions. These bins form the foundation of codebook-based feedback and beam management.</p>
+
+            <h2>Defining Angular Bins</h2>
+
+            <p>Angular bins are defined by steering vectors associated with specific quantized angles. For a uniform linear array (ULA) of M antennas with inter-element spacing d and wavelength λ, the transmit array response toward angle θ is:</p>
+
+            <div class="formula">
+                a<sub>t</sub>(θ) = [1, exp(−j 2πd/λ sin(θ)), ..., exp(−j 2πd/λ (M−1)sin(θ))]<sup>T</sup>
+            </div>
+
+            <p>The receive array response toward angle β is similarly defined:</p>
+
+            <div class="formula">
+                a<sub>r</sub>(β) = [1, ..., exp(−j 2πd/λ (K−1)sin(β))]<sup>T</sup>
+            </div>
+
+            <p>where <sup>T</sup> represents a vector transpose.</p>
+
+            <h2>Effective Channel</h2>
+
+            <p>In a system with M transmit bins and K receive bins, each bin corresponds to a beam pointing toward a specific angular sector. Assuming channel matrix H, the effective channel between a chosen TX bin m and RX bin n is:</p>
+
+            <div class="formula">
+                h<sub>eff</sub>(m,n) = a<sub>r</sub>(θ<sub>m</sub>)* H a<sub>t</sub>(β<sub>n</sub>)
+            </div>
+
+            <p>where * denotes vector Hermitian. This scalar represents the channel gain when transmitting through TX bin m and receiving through RX bin n.</p>
+
+            <p>For orthogonal steering beams in a ULA, the angular resolution (the minimum resolvable angle difference) is approximately given by:</p>
+
+            <div class="formula">
+                Δθ ≈ λ / ((M−1)d cos θ)
+            </div>
+
+            <h2>Sparse Channel Representation</h2>
+
+            <p>In mmWave and massive MIMO systems, channels are often sparse, meaning H is dominated by a small number of propagation paths L. Assuming path l with gain α<sub>l</sub> is propagated with angle θ<sub>l</sub><sup>t</sup> and received by angle θ<sub>l</sub><sup>r</sup>, channel matrix H can be expressed as:</p>
+
+            <div class="formula">
+                H = Σ<sub>l=1</sub><sup>L</sup> α<sub>l</sub> a<sub>r</sub>(θ<sub>l</sub><sup>r</sup>) a<sub>t</sub>(θ<sub>l</sub><sup>t</sup>)*
+            </div>
+
+            <div class="highlight-box">
+                <p>Most of the energy is concentrated in a few angular bins. Selecting the dominant TX-RX bin pair allows the system to approximate optimal BF with minimal feedback and computation.</p>
+            </div>
+
+            <h2>DFT-Based Beamforming</h2>
+
+            <p>The discrete Fourier transform (DFT) provides a natural basis for angular bin construction, especially for ULAs. The DFT matrix corresponds to a set of orthogonal beams that uniformly span the spatial domain. Each DFT vector is basically a steering vector pointing at a quantized angle θ<sub>k</sub>, where:</p>
+
+            <div class="formula">
+                sin(θ<sub>k</sub>) = 2(k−1)/(M − 1), for k=1,...,M
+            </div>
+
+            <p>This makes DFT-based beams (which are used for Type I and Type II CSI) a popular choice for hardware-friendly codebooks and analog BF.</p>
+
+            <h2>When Angular Binning Works Best</h2>
+
+            <p>Angular binning works very well in sparse channels, such as line-of-sight or mmWave environments, where most of the energy is focused in a small number of directions. In these cases, using a single beam pair is often sufficient. In dense channels—such as sub-6 GHz channels in 5G—exhibit energy spread across many bins. In this case, we may need to combine multiple bins to capture full energy, e.g., fall back to SVD-based BF.</p>
+
+            <h2>Takeaway</h2>
+
+            <p>Angular bin strategies are critical for practical and scalable MIMO system design. They reduce overhead and complexity, particularly in scenarios where channel paths are few and distinct.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+        </div>
+    </div>
+</body>
+</html>

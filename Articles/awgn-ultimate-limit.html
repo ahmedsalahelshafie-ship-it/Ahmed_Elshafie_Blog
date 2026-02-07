@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWGN as the Ultimate Limit in Wireless Communication</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: #0f172a;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 25px 0 15px;
+            color: #0f172a;
+        }
+
+        .article-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        .formula {
+            background-color: #f1f5f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #3b82f6;
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            background-color: #f1f5f9;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="category-tag">Wireless Theory</div>
+            <h1>AWGN as the Ultimate Limit in Wireless Communication</h1>
+            <div class="meta">
+                <span>📅 Feb 7, 2026</span>
+                <span>⏱️ 12 min read</span>
+                <span>👁️ 4.9K views</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p>In wireless systems, signal transmission is affected by noise, interference, and fading. While fading introduces randomness that varies the channel quality, AWGN represents a clean and idealized environment where only white Gaussian noise affects the signal. Here, we explain why AWGN sets the performance limit for wireless systems under different antenna configurations, and show the mathematical expressions for each case.</p>
+
+            <h2>1. SISO (Single Input Single Output)</h2>
+
+            <p>In a single-antenna system, the received signal is:</p>
+
+            <div class="formula">
+                y = h × x + n
+            </div>
+
+            <p>where:</p>
+            <ul>
+                <li>x is the transmitted signal</li>
+                <li>h is the channel coefficient</li>
+                <li>n is Gaussian noise with zero mean and variance N₀</li>
+            </ul>
+
+            <p>If the channel is constant (AWGN), equal to unit gain for simplicity, the Shannon capacity is:</p>
+
+            <div class="formula">
+                C_AWGN = log₂(1 + P / N₀)
+            </div>
+
+            <p>If the channel is fading (h is random), the capacity becomes:</p>
+
+            <div class="formula">
+                C_fading = E[ log₂(1 + P × |h|² / N₀) ]
+            </div>
+
+            <div class="highlight-box">
+                <p>Since the logarithm is a concave function, we apply Jensen's inequality:</p>
+                <div class="formula" style="background: transparent; padding: 10px 0;">
+                    C_fading ≤ log₂(1 + P × E[|h|²] / N₀) = C_AWGN
+                </div>
+                <p>This means the average (ergodic) capacity in fading is always less than or equal to the AWGN capacity.</p>
+            </div>
+
+            <h2>2. MISO (Multiple Input Single Output)</h2>
+
+            <p>In a multiple-transmit, single-receive antenna system, the received signal is:</p>
+
+            <div class="formula">
+                y = h<sup>H</sup> × x + n
+            </div>
+
+            <p>where:</p>
+            <ul>
+                <li><sup>H</sup> indicates vector Hermitian</li>
+                <li>h is an (n<sub>t</sub> × 1) channel vector</li>
+                <li>x is the transmitted signal</li>
+            </ul>
+
+            <p>With optimal beamforming (maximal transmit combining) and constant channel (AWGN), capacity is:</p>
+
+            <div class="formula">
+                C_AWGN = log₂(1 + P / N₀)
+            </div>
+
+            <p>For a fading channel:</p>
+
+            <div class="formula">
+                C_fading = E[ log₂(1 + P × ||h||² / N₀) ]
+            </div>
+
+            <p>Again, Jensen's inequality gives:</p>
+
+            <div class="formula">
+                C_fading ≤ log₂(1 + P × n<sub>t</sub> / N₀) = C_AWGN
+            </div>
+
+            <h2>3. SIMO (Single Input Multiple Output)</h2>
+
+            <p>Following the MISO approach, for SIMO:</p>
+
+            <div class="formula">
+                C_fading ≤ log₂(1 + P × n<sub>r</sub> / N₀) = C_AWGN
+            </div>
+
+            <h2>4. MIMO (Multiple Input Multiple Output)</h2>
+
+            <p>For systems with multiple transmit and receive antennas, the input-output relation is:</p>
+
+            <div class="formula">
+                y = H × x + n
+            </div>
+
+            <p>where:</p>
+            <ul>
+                <li>H is the (n<sub>r</sub> × n<sub>t</sub>) channel matrix</li>
+                <li>x is the transmit signal vector with min(n<sub>t</sub>, n<sub>r</sub>) data streams with covariance matrix Q</li>
+                <li>n is noise vector</li>
+            </ul>
+
+            <p>For fading:</p>
+
+            <div class="formula">
+                C_fading = max<sub>Q: tr(Q) ≤ P</sub> E[ log₂ det(I + (1/N₀) × H × Q × H<sup>H</sup>) ]
+            </div>
+
+            <p>Applying Jensen's inequality, for independent Rayleigh fading with normalized entries, the expectation becomes proportional to Q scaled by n<sub>t</sub> and n<sub>r</sub>, and the capacity is bounded by:</p>
+
+            <div class="formula">
+                C_fading ≤ min(n<sub>t</sub>, n<sub>r</sub>) × log₂(1 + P/N₀) = C_AWGN
+            </div>
+
+            <p>The same conclusion applies to bit error rate (BER) performance, where an AWGN channel always provides better (lower) error rates compared to a fading channel at the same average SNR.</p>
+
+            <h2>Conclusion</h2>
+
+            <p>Across SISO, MISO, SIMO, and MIMO systems, the fading channel's average capacity and BER are always worse than those of corresponding AWGN channels. This makes AWGN the ultimate theoretical limit for performance in wireless communication systems. No matter how the channel is exploited, the best performance achievable under fading cannot exceed the performance of an equivalent AWGN system with the same power and bandwidth.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+        </div>
+    </div>
+</body>
+</html>

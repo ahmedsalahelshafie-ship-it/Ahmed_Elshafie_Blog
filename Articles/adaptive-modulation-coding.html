@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How AMC Keeps Links Alive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: #0f172a;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #3b82f6;
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            background-color: #f1f5f9;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="category-tag">Wireless Systems</div>
+            <h1>How AMC Keeps Links Alive</h1>
+            <div class="meta">
+                <span>📅 Feb 7, 2026</span>
+                <span>⏱️ 8 min read</span>
+                <span>👁️ 5.4K views</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p>Adaptive Modulation and Coding (AMC) is a core mechanism in modern wireless communication systems. It allows the transmitter to change how data is sent based on current channel conditions. AMC is specified in LTE in 3GPP TS 36.213, in 5G NR in 3GPP TS 38.214, and in Wi-Fi systems in IEEE 802.11 standards. These documents define how modulation and coding schemes are selected, signaled, and used in real deployments.</p>
+
+            <div class="highlight-box">
+                <p>Think of talking to someone over a bad phone line. When the line is clear, you speak quickly and use complex sentences. When the line becomes noisy, you slow down and use simple words. AMC follows the same logic, but applies it to digital symbols and bits.</p>
+            </div>
+
+            <h2>How It Works</h2>
+
+            <p>In wireless systems, information bits are first encoded and then mapped to modulation symbols. Higher order modulation, such as 16-QAM, 64-QAM, 256-QAM, and even 1024-QAM, packs more bits into each symbol. This increases data rate but makes the transmission more sensitive to noise and interference. Lower order modulation, such as BPSK or QPSK, carries fewer bits per symbol but is much more robust. The coding rate determines how much redundancy is added. A high coding rate improves throughput, while a low coding rate improves reliability. AMC jointly selects the modulation order and coding rate, which together form a modulation and coding scheme, often called an MCS.</p>
+
+            <h2>Channel Quality Feedback</h2>
+
+            <p>The receiver continuously estimates channel quality. In LTE and 5G NR, this is reported using indicators such as the Channel Quality Indicator, Rank Indicator, and Precoding Matrix Indicator, as defined in 3GPP TS 36.213 and TS 38.214. The Channel Quality Indicator maps the observed signal quality to a recommended MCS. In Wi-Fi systems, similar decisions are made using measured packet error rate, signal-to-noise ratio, and rate adaptation algorithms guided by IEEE 802.11 specifications and vendor implementations.</p>
+
+            <h2>Dealing with Imperfect Feedback</h2>
+
+            <p>Feedback is never perfect. Channel conditions can change between measurement and transmission, especially for mobile users. For this reason, AMC is designed to be cautious. Standards specify target block error rates, typically around ten percent, to balance efficiency and reliability. Hybrid ARQ, specified in 3GPP TS 36.321 and TS 38.321, works alongside AMC to recover from occasional errors through retransmissions and soft combining.</p>
+
+            <h2>What AMC Actually Does</h2>
+
+            <p>AMC does not improve the channel itself. Fading, interference, and noise still exist. What AMC does is adapt the transmission strategy to whatever channel is present at that moment. This adaptability is essential in wireless systems where users move, obstacles appear, and interference levels change rapidly.</p>
+
+            <p>In summary, AMC is one of the quiet engines behind modern wireless performance. By continuously adjusting modulation and coding according to standardized rules in 3GPP and IEEE documents, it allows wireless systems to deliver high data rates when conditions are good and maintain reliable communication when conditions are poor.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+        </div>
+    </div>
+</body>
+</html>

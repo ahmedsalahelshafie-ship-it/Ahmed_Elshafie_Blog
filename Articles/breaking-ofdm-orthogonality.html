@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking OFDM Orthogonality</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: #0f172a;
+        }
+
+        .article-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        .formula {
+            background-color: #f1f5f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #3b82f6;
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            background-color: #f1f5f9;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="category-tag">OFDM Systems</div>
+            <h1>Breaking OFDM Orthogonality</h1>
+            <div class="meta">
+                <span>📅 Feb 7, 2026</span>
+                <span>⏱️ 10 min read</span>
+                <span>👁️ 5.3K views</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p>In digital communication systems, especially those using OFDM like 4G LTE and 5G NR, synchronization is critical. Two major impairments that affect synchronization are clock error and phase error. Both distort the received signal, degrade performance, and increase the EVM.</p>
+
+            <h2>Synchronization Matters</h2>
+
+            <p>In a wireless system, the receiver needs to correctly sample the incoming signal and decode its phase. This requires accurate timing and phase alignment between the transmitter and receiver. Any deviation leads to inter-symbol interference, carrier leakage, or subcarrier (SC) distortion, especially in OFDM where precise alignment is vital.</p>
+
+            <h2>Clock Errors</h2>
+
+            <p>Clock error refers to the mismatch in sampling rates between the transmitter and the receiver. This causes a timing drift, which means the receiver samples the signal at incorrect instants. There are two main types:</p>
+
+            <ul>
+                <li><strong>Sampling Clock Offset (SCO):</strong> A slight difference in clock frequency leads to a slow shift in sampling time.</li>
+                <li><strong>Sampling Clock Phase Error:</strong> The receiver starts sampling at the wrong time instant, causing constant phase distortion.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p>In OFDM, clock errors destroy orthogonality between subcarriers, causing inter-carrier interference (ICI).</p>
+            </div>
+
+            <p>If Δf<sub>clk</sub> is the fractional clock offset and T is the symbol duration, the resulting timing offset after n samples is:</p>
+
+            <div class="formula">
+                Δt(n) = n × Δf<sub>clk</sub> × T
+            </div>
+
+            <p>The received symbol r(n) becomes a shifted version of the original, leading to time misalignment.</p>
+
+            <h2>Phase Errors</h2>
+
+            <p>Phase error happens when there's a mismatch between the transmitter and receiver oscillator phases. It can be:</p>
+
+            <ul>
+                <li><strong>Constant phase offset:</strong> The receiver sees a constant rotation of the signal constellation.</li>
+                <li><strong>Phase noise:</strong> Rapid, random fluctuations in the carrier phase, due to oscillator instability.</li>
+                <li><strong>Carrier Frequency Offset (CFO):</strong> A frequency mismatch causes a linear phase drift over time.</li>
+            </ul>
+
+            <p>Phase errors rotate the signal constellation and spread subcarrier energy across others, increasing EVM and bit errors.</p>
+
+            <h2>Phase Error Model</h2>
+
+            <p>Let θ(t) be the time-varying phase error. The received baseband signal becomes:</p>
+
+            <div class="formula">
+                r(t) = s(t) × e<sup>jθ(t)</sup>
+            </div>
+
+            <ul>
+                <li>For constant offset: θ(t) = θ₀</li>
+                <li>For CFO: θ(t) = 2πΔf × t</li>
+                <li>For phase noise: θ(t) is random (modeled as Wiener process)</li>
+            </ul>
+
+            <p>In discrete domain:</p>
+
+            <div class="formula">
+                r[n] = s[n] × e<sup>jθ[n]</sup>
+            </div>
+
+            <p>Using e<sup>jθ[n]</sup> ≈ 1 + jθ[n] for small θ[n], we get:</p>
+
+            <div class="formula">
+                EVM² ≈ 1/SNR + σ²
+            </div>
+
+            <p>where σ² is the variance of the phase noise.</p>
+
+            <h2>5G Systems</h2>
+
+            <p>3GPP specifications such as TS 38.101 set strict limits on EVM for different modulations. These limits indirectly account for allowed clock and phase errors.</p>
+
+            <p>Receivers use techniques like pilot tracking, CFO correction, and PLL-based synchronization to correct these impairments dynamically.</p>
+
+            <h2>Summary</h2>
+
+            <p>Clock and phase errors are powerful distortions in wireless systems. They blur symbol timing and rotate signal phases, reducing data reliability. Understanding and compensating them is essential for achieving the high throughput and reliability targets of modern wireless systems like 5G.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preamble Puncturing in Wi-Fi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: #0f172a;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 25px 0 15px;
+            color: #0f172a;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #3b82f6;
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            background-color: #f1f5f9;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="category-tag">Wi-Fi Technology</div>
+            <h1>Preamble Puncturing in Wi-Fi</h1>
+            <div class="meta">
+                <span>📅 Feb 7, 2026</span>
+                <span>⏱️ 7 min read</span>
+                <span>👁️ 4.2K views</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p>Modern Wi-Fi systems operate in increasingly crowded spectrum, especially in the 5 GHz and 6 GHz bands where multiple overlapping networks may partially interfere with one another. Traditional Wi-Fi operation assumes that if any portion of a channel is busy, the entire channel is avoided. This conservative approach limits throughput, particularly for wide channels such as 80, 160, and 320 MHz. Preamble puncturing addresses this inefficiency by allowing Wi-Fi transmissions to avoid only the interfered portions of the channel while still using the remaining spectrum.</p>
+
+            <h2>What is Preamble Puncturing?</h2>
+
+            <p>Preamble puncturing is a mechanism that allows a transmitter to disable, or puncture, specific frequency subbands within a wide channel that are experiencing interference. Instead of transmitting over the full contiguous channel, the access point selectively omits the busy subchannels and transmits over the clean ones. The receiver is informed of this puncturing pattern through signaling in the PHY preamble.</p>
+
+            <div class="highlight-box">
+                <p>This technique enables partial channel usage while preserving orthogonality and proper demodulation. From the receiver perspective, the punctured subbands are treated as unused spectrum rather than corrupted data.</p>
+            </div>
+
+            <h2>Preamble Puncturing in Wi-Fi 6</h2>
+
+            <p>In Wi-Fi 6 (IEEE 802.11ax), preamble puncturing is supported for downlink OFDMA transmissions. The access point can puncture 20 MHz subchannels within 80 or 160 MHz channels when interference is detected. The puncturing pattern is signaled in the HE-SIG field of the PHY preamble, allowing stations to correctly interpret which subcarriers carry valid data.</p>
+
+            <h2>Enhanced Puncturing in Wi-Fi 7</h2>
+
+            <p>Wi-Fi 7 (IEEE 802.11be) extends preamble puncturing to support much wider channels, including 320 MHz, and enables more flexible puncturing patterns. Enhanced signaling in the EHT preamble allows finer granularity and better coordination with features such as Multi-Link Operation and Distributed Resource Units. This makes puncturing a core mechanism for maintaining high throughput in dense deployments.</p>
+
+            <h2>Why Preamble Puncturing Matters</h2>
+
+            <p>Wide channels increase peak data rates, but they also increase the probability that some portion of the channel overlaps with interference from neighboring networks. Without puncturing, a single interfered 20 MHz segment would force the transmitter to fall back to a narrower channel, wasting available spectrum.</p>
+
+            <p>Preamble puncturing allows Wi-Fi to balance channel width and reliability. Clean subbands can still be exploited, while busy subbands are avoided. This improves spectrum utilization, reduces unnecessary backoff, and stabilizes throughput in dense environments such as apartments, campuses, and enterprise deployments.</p>
+
+            <h2>The Bottom Line</h2>
+
+            <p>In summary, preamble puncturing is a key PHY-layer enhancement that allows Wi-Fi to make efficient use of wide channels in the presence of partial interference. Standardized in IEEE 802.11ax and enhanced in IEEE 802.11be, it enables higher throughput, better spectrum reuse, and more robust performance in dense deployments.</p>
+
+            <p>As Wi-Fi continues to evolve to meet the demands of modern applications, mechanisms like preamble puncturing ensure that the technology can adapt intelligently to real-world conditions, maximizing performance even in challenging environments.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+        </div>
+    </div>
+</body>
+</html>

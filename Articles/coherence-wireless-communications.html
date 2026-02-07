@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coherence in Wireless Communications</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: #0f172a;
+        }
+
+        .formula {
+            background-color: #f1f5f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #3b82f6;
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            background-color: #f1f5f9;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="category-tag">Wireless Theory</div>
+            <h1>Coherence in Wireless Communications</h1>
+            <div class="meta">
+                <span>📅 Feb 7, 2026</span>
+                <span>⏱️ 11 min read</span>
+                <span>👁️ 6.1K views</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p>Coherence is a fundamental concept in wireless communications, referring to the regions in time, frequency, and space over which the wireless channel remains approximately constant. These regions are quantified by coherence time, coherence bandwidth, and spatial (or angular) coherence.</p>
+
+            <div class="highlight-box">
+                <p>The DFT is not just a mathematical tool but also a means of exploring signal behavior in each of these domains. In wireless communications, the DFT enables resolution of signal components in frequency (via OFDM), in time (via delay profiling), and in angle (via beamforming).</p>
+            </div>
+
+            <h2>1. Frequency Domain</h2>
+
+            <p>In OFDM, the DFT transforms a time-domain signal into parallel frequency-domain subcarriers (SCs). Each SC corresponds to a DFT bin, spaced by:</p>
+
+            <div class="formula">
+                Δf = 1 / T
+            </div>
+
+            <p>where T is the OFDM symbol duration.</p>
+
+            <p>To maintain flat fading across SCs, spacing must be less than the channel's coherence bandwidth (B<sub>C</sub>). B<sub>C</sub> is approximated by:</p>
+
+            <div class="formula">
+                B<sub>C</sub> ≈ 1 / (2π τ<sub>rms</sub>)
+            </div>
+
+            <p>where τ<sub>rms</sub> is the root mean square delay spread. If SC spacing exceeds B<sub>C</sub>, frequency-selective fading distorts the signal.</p>
+
+            <h2>2. Space Domain</h2>
+
+            <p>In the spatial domain, coherence relates to how we can distinguish signal paths arriving from different angles. The DFT plays a central role in uniform linear arrays, forming beams pointed in specific directions, each DFT bin maps to a beam direction. Angular resolution is approximated by:</p>
+
+            <div class="formula">
+                Δθ ≈ λ / ((N − 1) d cos θ)
+            </div>
+
+            <p>where λ is the wavelength, d is antenna spacing, and θ is the steering angle. This determines how many angular directions or beams can be separated. Typically, an array can resolve up to N directions, where N is the number of antennas.</p>
+
+            <p>While angular resolution defines the minimum angular separation that an array can distinguish, angular coherence describes the angular range over which the wireless channel remains spatially correlated. In environments with clustered scattering, signal components often arrive within a narrow angular spread centered around a dominant direction. This angular spread θ<sub>c</sub> is measured as the full width at half maximum (FWHM) of the angular power spectrum.</p>
+
+            <h2>3. Delay Domain</h2>
+
+            <p>In the delay domain, inverse DFT of frequency-domain channel estimates reveals the power delay profile. This allows the system to resolve multipath components. The delay resolution is:</p>
+
+            <div class="formula">
+                Δτ = 1 / B
+            </div>
+
+            <p>where B is the signal bandwidth. The maximum resolvable delay is:</p>
+
+            <div class="formula">
+                τ<sub>max</sub> = N / B
+            </div>
+
+            <p>where N is the number of SCs.</p>
+
+            <h2>4. Time Domain</h2>
+
+            <p>The coherence time, T<sub>C</sub>, describes how long the channel remains unchanged and depends on Doppler spread caused by motion. The maximum Doppler shift is:</p>
+
+            <div class="formula">
+                f<sub>D</sub> = v / λ
+            </div>
+
+            <p>where v is the relative velocity. T<sub>C</sub> is approximately:</p>
+
+            <div class="formula">
+                T<sub>C</sub> ≈ 0.423 / f<sub>D</sub>
+            </div>
+
+            <p>If the symbol duration exceeds T<sub>C</sub>, the channel changes during transmission, leading to time-selective fading.</p>
+
+            <h2>Final Thoughts</h2>
+
+            <p>Time, bandwidth, and angular coherence define the physical limits within which wireless systems operate reliably. The DFT provides a natural framework to resolve signals in each domain, enabling robust system design.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Units and Distributed Resource Units in Wi-Fi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: #0f172a;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 25px 0 15px;
+            color: #0f172a;
+        }
+
+        .article-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #3b82f6;
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            background-color: #f1f5f9;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="category-tag">Wi-Fi Technology</div>
+            <h1>Resource Units and Distributed Resource Units in Wi-Fi</h1>
+            <div class="meta">
+                <span>📅 Feb 7, 2026</span>
+                <span>⏱️ 9 min read</span>
+                <span>👁️ 4.5K views</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p>Modern Wi-Fi networks, especially Wi-Fi 6 (802.11ax) and Wi-Fi 7 (802.11be), face the challenge of efficiently sharing spectrum among multiple users. The traditional one user per channel approach wastes opportunities when devices have small data demands. This is where Resource Units (RUs) and Distributed Resource Units (DRUs) come in, mechanisms that slice the spectrum into flexible portions so multiple users can transmit simultaneously.</p>
+
+            <h2>What are Resource Units?</h2>
+
+            <p>A Resource Unit (RU) is a portion of the frequency spectrum assigned to a single user in an OFDMA system. Instead of dedicating the entire channel to one device, Wi-Fi can divide a 20, 40, 80, or 160, and 320 MHz channel into smaller blocks. Each block is an RU, which can range in size from 26 tones up to 996 tones in Wi-Fi 6, and larger in Wi-Fi 7.</p>
+
+            <div class="highlight-box">
+                <p>RUs allow multiple devices to transmit in the same time slot but on different frequency slices, improving spectral efficiency and reducing latency. For example, in an apartment, several phones, laptops, and IoT devices can upload small packets simultaneously rather than waiting for an entire channel to be free.</p>
+            </div>
+
+            <h2>What are Distributed Resource Units?</h2>
+
+            <p>A Distributed Resource Unit (DRU) is an RU whose subcarriers are distributed across the channel rather than contiguous. DRUs are introduced in Wi-Fi 7 to increase flexibility and improve frequency diversity. By spreading the allocation over the channel, DRUs allow the access point to adaptively assign portions to users in a way that mitigates interference and multipath fading. DRUs improve OFDMA scheduling flexibility and frequency diversity, helping Wi-Fi 7 serve ultra-low latency traffic and high-throughput users more efficiently, while operating alongside features like Multi-Link Operation.</p>
+
+            <h2>Why RUs and DRUs are Needed</h2>
+
+            <ul>
+                <li><strong>Multi-user efficiency:</strong> Not all devices need the full channel. Small RUs allow low-data devices to transmit without blocking high-demand users.</li>
+                <li><strong>Reduced latency:</strong> By allowing simultaneous transmissions, devices avoid queuing delays which is critical for gaming, AR/VR, and industrial IoT.</li>
+                <li><strong>Frequency diversity:</strong> DRUs spread signals over the channel, reducing the impact of fading and interference.</li>
+            </ul>
+
+            <h2>Standards and Implementation</h2>
+
+            <p>Wi-Fi 6 (802.11ax) introduced OFDMA and RUs. Fixed RU sizes include 26, 52, 106, 242, 484, and 996 tones. The standard defines allocation rules, preamble signaling, and subcarrier mapping to ensure orthogonality and minimize interference.</p>
+
+            <p>Wi-Fi 7 (802.11be) introduces DRUs and wider channels up to 320 MHz, supporting distributed allocation of subcarriers for multi-link operation. DRUs require precise timing, accurate channel state information, and low processing latency to ensure multiple transmissions align correctly and avoid collisions.</p>
+
+            <h2>The Bottom Line</h2>
+
+            <p>In short, RUs and DRUs allow more devices to share spectrum efficiently, reduce delays, and optimize performance in dense environments. Without them, modern Wi-Fi would struggle to support the explosion of simultaneous users and high-bandwidth applications.</p>
+
+            <p>As Wi-Fi technology continues to evolve, features like RUs and DRUs demonstrate how intelligent spectrum management can unlock better performance even as wireless environments become more crowded and demanding.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+        </div>
+    </div>
+</body>
+</html>

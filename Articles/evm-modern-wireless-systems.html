@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVM in Modern Wireless Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: #0f172a;
+        }
+
+        .article-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        .formula {
+            background-color: #f1f5f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #3b82f6;
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            background-color: #f1f5f9;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="category-tag">5G Systems</div>
+            <h1>EVM in Modern Wireless Systems</h1>
+            <div class="meta">
+                <span>📅 Feb 7, 2026</span>
+                <span>⏱️ 9 min read</span>
+                <span>👁️ 5.8K views</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p>Error Vector Magnitude (EVM) is a critical metric used to assess signal quality in wireless communication systems. It tells us how far the received symbols deviate from their ideal positions in the modulation constellation. A lower EVM indicates better signal integrity and fewer errors during demodulation.</p>
+
+            <p>EVM plays a critical role in standards like LTE, 5G NR, and WiFi, which use advanced modulation schemes such as 64-QAM and 256-QAM. These modulation formats offer high data rates by placing more bits per symbol, but they are also more sensitive to noise and distortion. This makes EVM a key parameter in design, calibration, and testing of radios.</p>
+
+            <h2>Why EVM Degrades</h2>
+
+            <p>There are two main reasons EVM can degrade. The first is thermal noise, which comes from the radio environment and receiver circuitry. The second is hardware nonidealities such as in-phase quadrature mismatch (IQMM). This post focuses on IQMM which occurs when there is imbalance between the in-phase (I) and quadrature (Q) signal paths, causing an unwanted mirror image of the signal to leak into the system, known as image interference.</p>
+
+            <p>The imperfect baseband signal is:</p>
+
+            <div class="formula">
+                r(t) = αs(t) + βs(t)*
+            </div>
+
+            <p>where s(t) is the ideal baseband signal and s(t)* is its complex conjugate. Moreover:</p>
+
+            <div class="formula">
+                α = (1 + ϵe<sup>−jϕ</sup>)/2<br>
+                β = (1 − ϵe<sup>jϕ</sup>)/2
+            </div>
+
+            <p>where ϵ is the gain imbalance and ϕ is the phase error between the I and Q branches.</p>
+
+            <h2>EVM Equation</h2>
+
+            <p>To understand how IQ mismatch and noise jointly affect EVM, we can use a simplified equation. Let SNR<sub>k</sub> represent the signal-to-noise ratio at subcarrier k, and IMRR represent the image rejection ratio, which characterizes the strength of IQ imbalance. For OFDM systems, the k-th subcarrier's EVM can be expressed as:</p>
+
+            <div class="formula">
+                EVM<sub>k</sub>² ≈ (1 / SNR<sub>k</sub>) + γ²
+            </div>
+
+            <p>where:</p>
+
+            <div class="formula">
+                γ² = 1/IMRR = (1 + ε² − 2ε cosθ)/(1 + ε² + 2ε cosθ)
+            </div>
+
+            <div class="highlight-box">
+                <p>This equation shows that total EVM increases when either noise is high (low SNR) or when IQ mismatch is strong (low IMRR). In practice, even if SNR is very high, poor IQ matching sets a floor on the best EVM the system can achieve. For example, an IMRR of 30 dB means that the lowest possible EVM is about -30 dB, regardless of how clean the channel is.</p>
+            </div>
+
+            <h2>EVM Limits in 5G NR</h2>
+
+            <p>The 3GPP standard TS 38.101-1 for 5G specifies maximum EVM levels for different modulation formats. These limits must be met by transmitters and receivers to ensure reliable communication. In Frequency Range (FR) 1 (below 6 GHz), the typical EVM targets are:</p>
+
+            <ul>
+                <li><strong>QPSK:</strong> EVM must be less than -17 dB</li>
+                <li><strong>256-QAM:</strong> less than -31 dB</li>
+            </ul>
+
+            <p>In FR 2 (mmWave), implementation is more difficult, so the EVM limits are slightly relaxed.</p>
+
+            <h2>Takeaway</h2>
+
+            <p>EVM is one of the most important metrics for evaluating modern communication systems. It reflects both random noise and hardware-induced distortion such as IQ mismatch. Meeting the EVM requirements defined in standards is essential for achieving high throughput, energy efficiency, and system robustness.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+        </div>
+    </div>
+</body>
+</html>

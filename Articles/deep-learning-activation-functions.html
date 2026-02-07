@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Design That Made Deep Learning Practical</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: #0f172a;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 25px 0 15px;
+            color: #0f172a;
+        }
+
+        .formula {
+            background-color: #f1f5f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #3b82f6;
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            background-color: #f1f5f9;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="category-tag">Deep Learning</div>
+            <h1>The Design That Made Deep Learning Practical</h1>
+            <div class="meta">
+                <span>📅 Feb 7, 2026</span>
+                <span>⏱️ 8 min read</span>
+                <span>👁️ 6.3K views</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p>In the family vacation example in [1], logistic regression feels natural. You gather signals like budget, weather, and school schedule, combine them into one score, and then turn that score into a clean yes or no decision. That final step is done by the sigmoid function, which squeezes any number into a probability between 0 and 1. It is perfect when your goal is a single, interpretable binary decision.</p>
+
+            <p>But once we move beyond one decision and start building neural networks, we face a new problem. A neural network is made of many layers, and each layer begins by computing a weighted sum of its inputs, just like logistic regression. If we keep stacking only these weighted sums, the entire network still behaves like one big linear model. No matter how many layers you add, it cannot represent truly complex patterns. To break that limitation, every layer needs a non-linear step after the weighted sum. That step is called an activation function, and it is what gives neural networks their real expressive power.</p>
+
+            <h2>ReLU: The Game Changer</h2>
+
+            <p>One of the most important activation functions is Rectified Linear Unit (ReLU). ReLU is simple: if the score is negative, it outputs zero; if the score is positive, it passes it through as is. You can think of it like a practical family rule during planning: if an idea clearly makes things worse, stop discussing it, but if it helps, keep it and build on it. This small rule turns out to be incredibly powerful.</p>
+
+            <div class="formula">
+                ReLU(z) = max(0, z)
+            </div>
+
+            <h2>Why ReLU Became Popular</h2>
+
+            <p>ReLU became popular for two main reasons. First, it is hardware-friendly. Sigmoid needs expensive operations like exponentials and division, while ReLU is basically just a comparison and a selection. That makes it faster, cheaper, and easier to implement efficiently on real devices. Second, it helps training. Neural networks learn through gradients, and sigmoid often produces very small gradients when the input score is too large or too small, which can slow learning in deep models. ReLU avoids that problem on the positive side, allowing learning signals to flow more strongly through many layers.</p>
+
+            <div class="highlight-box">
+                <p>ReLU's simplicity is its strength. By avoiding expensive computations and maintaining strong gradients, it makes training deep networks both practical and efficient.</p>
+            </div>
+
+            <h2>The Limitations and Evolution</h2>
+
+            <p>ReLU is not perfect though. If a neuron keeps seeing negative scores, it may output zero repeatedly and stop learning altogether, a problem sometimes called a "dead neuron". That is why variants exist, such as the Gaussian Error Linear Unit (GELU), which replaces ReLU's hard cutoff with a more gradual gating behavior. Instead of killing all negative values, GELU softly reduces them based on their magnitude, often written as GELU(z) = z*Φ(z) where Φ(z) is the standard normal CDF. In practice, this smoothness can improve training stability in some deep models, which is why GELU is commonly used in Transformer-based architectures.</p>
+
+            <h2>The Right Tool for the Right Job</h2>
+
+            <p>ReLU/GELU is ideal inside the hidden layers where the model is still forming its internal understanding. It helps the network decide what information is worth carrying forward, layer by layer, until that final decision becomes easy. Logistic regression makes the final call.</p>
+
+            <p>Understanding activation functions is not just about knowing the math. It is about appreciating how simple design choices can unlock powerful capabilities. ReLU's elegance lies in its simplicity, proving that sometimes the most practical solutions are also the most beautiful.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+        </div>
+    </div>
+</body>
+</html>

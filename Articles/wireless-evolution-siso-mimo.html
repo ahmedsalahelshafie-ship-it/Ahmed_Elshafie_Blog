@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From SISO to MIMO: The Evolution of Wireless Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: #0f172a;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 25px 0 15px;
+            color: #0f172a;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #3b82f6;
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            background-color: #f1f5f9;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="category-tag">Wireless History</div>
+            <h1>From SISO to MIMO: The Evolution of Wireless Systems</h1>
+            <div class="meta">
+                <span>📅 Feb 7, 2026</span>
+                <span>⏱️ 15 min read</span>
+                <span>👁️ 7.2K views</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p>Early wireless systems were simple and fragile. A transmitter sent a signal using a single antenna, and a receiver listened with a single antenna. This Single Input Single Output (SISO) model dominated early radio and cellular systems. If the signal faded due to movement, shadowing, or reflections, the link simply failed. There was no adaptation and very little resilience.</p>
+
+            <h2>The Channel is the Limitation</h2>
+
+            <p>Engineers quickly realized that the wireless channel was the main limitation. Noise, multipath, and interference were unavoidable. The first major response was stronger channel coding. By adding redundancy, receivers could correct errors caused by noise and fading. Early convolutional codes laid the foundation. Low Density Parity Check (LDPC) codes were introduced by Gallager in the early 1960s, but were not widely used until rediscovered decades later. Later, turbo codes, introduced in 1993, came remarkably close to the Shannon limit. These advances dramatically improved reliability, but they did not change how the signal interacted with the channel.</p>
+
+            <h2>Spatial Diversity: MISO</h2>
+
+            <p>The next step was spatial diversity. Instead of relying on one antenna, systems began using multiple transmit antennas. This led to Multiple Input Single Output (MISO). The idea was simple. Send the same information through multiple spatial paths so that at least one copy arrives reliably. Space-time block coding, introduced by Alamouti in 1998, provided a simple and elegant solution. Later techniques such as cyclic delay diversity improved link robustness without increasing receiver complexity. These methods were especially effective when the transmitter had little or no channel knowledge.</p>
+
+            <div class="highlight-box">
+                <p>As technology advanced, multiple antennas became practical at both the transmitter and receiver. This enabled Multiple Input Multiple Output (MIMO). MIMO represented a fundamental shift in wireless design.</p>
+            </div>
+
+            <h2>The MIMO Revolution</h2>
+
+            <p>Instead of using antennas only for reliability, systems could now use them to increase data rate. Theoretical work by Foschini and Gans showed that channel capacity could grow linearly with the number of antennas under rich scattering conditions. Subsequent research translated this theory into practical space-time and spatial multiplexing schemes.</p>
+
+            <h2>Modulation and Coding Converge</h2>
+
+            <p>While antennas were evolving, modulation schemes were also becoming denser. Early systems used simple constellations with few symbols. As signal processing improved, higher order Quadrature Amplitude Modulation (QAM) became feasible. Packing more bits into each symbol increased throughput, but only when the channel quality was high. At the same time, coding techniques continued to evolve. Early systems relied on convolutional codes, while turbo codes became the first widely deployed near-Shannon-limit codes. Later, LDPC and polar codes emerged and were adopted in modern standards. Modulation and coding were no longer independent choices. They had to be designed and selected together.</p>
+
+            <h2>Adaptive Modulation and Coding</h2>
+
+            <p>This convergence led to Adaptive Modulation and Coding (AMC). Instead of fixing the transmission format, systems began adjusting modulation order and coding rate based on channel conditions. Early work on adaptive coded modulation formalized this concept and demonstrated its gains in fading channels. AMC allowed systems to operate efficiently across a wide range of signal-to-noise ratios, trading throughput for reliability as needed.</p>
+
+            <h2>Beamforming Emerges</h2>
+
+            <p>Beamforming emerged alongside MIMO and AMC. With multiple antennas, transmitters could apply phase and amplitude weights to focus energy toward the receiver. Early beamforming concepts appeared in array signal processing literature long before cellular systems adopted them. In wireless systems, beamforming improved signal quality, reduced interference, and enabled higher modulation orders and more spatial layers. Rather than replacing MIMO or AMC, beamforming amplified their effectiveness.</p>
+
+            <h2>Modern Integration</h2>
+
+            <p>By the time LTE was standardized, these ideas were no longer isolated. Channel coding, MIMO, beamforming, Hybrid ARQ, and AMC were tightly integrated into a unified system. 3GPP TS 36.213 defined how channel quality feedback, modulation and coding selection, and antenna usage worked together in practice. Turbo coding, rank adaptation, and link adaptation became part of a closed-loop system operating every few milliseconds.</p>
+
+            <p>In parallel, Wi-Fi systems followed a similar evolution. IEEE 802.11n introduced MIMO and spatial multiplexing. IEEE 802.11ac expanded beamforming and higher order modulation, and IEEE 802.11ax pushed adaptation further to handle dense and interference-limited environments. Although Wi-Fi uses different feedback and signaling mechanisms, the underlying principles of adaptation remain the same.</p>
+
+            <h2>5G and Beyond</h2>
+
+            <p>In 5G NR, adaptation became even more central. Flexible numerology, massive MIMO, and diverse service requirements made static transmission impossible. AMC, specified in 3GPP TS 38.214, became part of a broader adaptation loop that includes rank selection, precoding matrix selection, and scheduling decisions. LDPC and polar codes replaced earlier coding schemes, and beam management became a continuous process rather than a static configuration.</p>
+
+            <p>What this history shows is that wireless reliability did not come from a single invention. It came from a sequence of ideas evolving together. SISO gave way to MISO and MIMO. Coding advanced alongside modulation. Beamforming focused energy, and AMC decided how aggressively to use it. Modern wireless systems survive not because the channel became easier, but because the technology learned to adapt as fast as the channel changes.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+        </div>
+    </div>
+</body>
+</html>

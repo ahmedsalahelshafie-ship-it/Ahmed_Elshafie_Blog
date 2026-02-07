@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty of FFT in Everyday Life</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: #0f172a;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 25px 0 15px;
+            color: #0f172a;
+        }
+
+        .formula {
+            background-color: #f1f5f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #3b82f6;
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            background-color: #f1f5f9;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="category-tag">Signal Processing</div>
+            <h1>Beauty of FFT in Everyday Life</h1>
+            <div class="meta">
+                <span>📅 Feb 7, 2026</span>
+                <span>⏱️ 10 min read</span>
+                <span>👁️ 5.1K views</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p>At its core, the Fourier Transform (FT) is a magical lens that lets us see the hidden structure of signals. It reveals how complex signals can be decomposed into simple sine and cosine waves, uncovering patterns invisible in the raw time domain. Modern technology depends on signals that change quickly and unpredictably. Your voice, music, Wi-Fi/cellular data, radar echoes, and even a heartbeat are all signals that live in time. We record them as samples obtained from a time domain signal x[t]. But time is not always the best view. Often we want to know what is inside the signal, what tones exist, where interference sits, and how energy is distributed. This is where the Fast FT (FFT) becomes one of the most beautiful tools in engineering.</p>
+
+            <p>At its core, FFT is a fast way to compute the Discrete Fourier Transform (DFT). The DFT converts N time samples into N frequency bins, where the k-th bin is:</p>
+
+            <div class="formula">
+                X[k] = sum_{n=0}^{N-1} x[n]exp(-j2π*k*n/N)
+            </div>
+
+            <p>Here, X[k] tells us how much of a specific frequency component exists in x[t] sampled at n*T<sub>s</sub>=n/F<sub>s</sub> with sampling rate F<sub>s</sub>=1/T<sub>s</sub>.</p>
+
+            <h2>The Breakthrough: Speed Matters</h2>
+
+            <p>The real breakthrough is how fast FFT runs. Direct DFT costs O(N<sup>2</sup>), which becomes computationally expensive and creates a significant hardware load. FFT reduces this to O(N log<sub>2</sub>(N)), enabling real-time spectrum analysis on phones, radios, and tiny sensors. This speed is not just convenience, it unlocks entire system designs that would otherwise be impossible.</p>
+
+            <h2>Where FFT Shows Up Everywhere</h2>
+
+            <h3>Audio, Music, Images, and Video</h3>
+            <p>FFT supports equalizers, noise suppression, pitch tracking, spectral feature extraction, transform coding for compression, and speech enhancement. In voice assistants, FFT-based features help separate speech from background noise.</p>
+
+            <h3>Wireless Communication</h3>
+            <p>In Wi-Fi, LTE, and 5G, OFDM is built on FFT itself: the transmitter uses IFFT to create time domain symbols, and the receiver uses FFT to recover subcarriers. This makes wideband communication scalable and robust.</p>
+
+            <h3>Radar Systems</h3>
+            <p>In radar, FFT is used for range and Doppler processing, letting systems estimate distance, phase, and speed. In cars, it supports object detection and tracking.</p>
+
+            <h3>Medical Devices</h3>
+            <p>In medical devices, FFT helps analyze ECG (electrocardiogram) and EEG (electroencephalogram) by revealing dominant rhythms and detecting interference like 50 Hz or 60 Hz hum.</p>
+
+            <h3>Beamforming</h3>
+            <p>In beamforming, it is a key tool for evaluating spatial directions and selecting the best beams in LTE and 5G systems.</p>
+
+            <h3>Power Systems</h3>
+            <p>In power systems, FFT detects harmonics and distortion for grid monitoring and inverter diagnostics.</p>
+
+            <h3>Industrial Applications</h3>
+            <p>In factories, vibration sensors use FFT to detect bearing faults early, preventing costly failures.</p>
+
+            <h2>Fast Filtering Through Frequency Domain</h2>
+
+            <div class="highlight-box">
+                <p>FFT also enables fast filtering. Convolution in time can be heavy, but frequency domain multiplication is efficient. This idea powers long echo cancellers, channel equalizers, and high quality audio processing.</p>
+            </div>
+
+            <h2>The Beauty of Elegance</h2>
+
+            <p>The beauty of FFT is that it is fast, practical, and deeply elegant—a rare tool that connects pure math to real products in a direct and powerful way. From the music you listen to, to the wireless signals that keep you connected, to the medical devices that monitor your health, FFT is working silently in the background, turning complex signals into actionable insights.</p>
+
+            <p>Understanding FFT is not just about learning an algorithm. It is about appreciating how mathematical beauty can translate into real-world impact, making our technology faster, smarter, and more efficient.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+        </div>
+    </div>
+</body>
+</html>
