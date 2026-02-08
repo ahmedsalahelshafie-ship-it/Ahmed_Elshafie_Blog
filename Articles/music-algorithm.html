@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Magic Behind MUSIC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: #0f172a;
+        }
+
+        .article-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        .formula {
+            background-color: #f1f5f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #3b82f6;
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            background-color: #f1f5f9;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="category-tag">Signal Processing</div>
+            <h1>The Magic Behind MUSIC</h1>
+            <div class="meta">
+                <span>📅 Feb 7, 2026</span>
+                <span>⏱️ 10 min read</span>
+                <span>👁️ 6.9K views</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p>Multiple Signal Classification (MUSIC) is a smart technique used to detect the direction of incoming signals. While the name may sound artistic, it is actually a mathematical method that helps systems like 5G and WiFi determine where a signal is coming from. It is widely used in communication, radar, sonar, and even in medical imaging.</p>
+
+            <h2>What Does MUSIC Do?</h2>
+
+            <p>Imagine placing several antennas in a straight line. When a signal from a phone or transmitter reaches these antennas, it arrives at each one with slight differences in timing and phase. MUSIC analyzes these differences to determine the direction the signal came from, a process known as Direction of Arrival (DoA) estimation.</p>
+
+            <p>To achieve this, MUSIC uses what is known as an antenna array, which is a group of antennas working together. When signals arrive at the array, the algorithm forms a covariance matrix based on the received data. This matrix is then divided into two parts. One part contains the useful signal information, called the signal subspace, and the other part contains background noise, called the noise subspace.</p>
+
+            <p>By scanning across all possible directions, MUSIC calculates a "spectrum" and looks for peaks. These peaks show the directions of the incoming signals.</p>
+
+            <h2>The Key Equation</h2>
+
+            <div class="formula">
+                P(θ) = 1 / ||a(θ)* E<sub>n</sub>||²
+            </div>
+
+            <p>where:</p>
+            <ul>
+                <li>P(θ) is the spatial spectrum at angle θ</li>
+                <li>a(θ) is the array steering vector for angle θ</li>
+                <li>E<sub>n</sub> is the noise subspace matrix</li>
+                <li>* means Hermitian transpose (complex conjugate transpose)</li>
+                <li>||...|| is the norm (size of the vector)</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p>When a(θ) aligns poorly with E<sub>n</sub>, the value of P(θ) becomes large, which indicates the true angle of arrival.</p>
+            </div>
+
+            <h2>A Simple Analogy</h2>
+
+            <p>Imagine you have two puzzles: one represents random noise direction, and the other represents real signal direction. You take a puzzle piece, representing a potential signal direction (a(θ)), and try to fit it into the noise puzzle (E<sub>n</sub>). Most pieces don't fit well, but occasionally, a piece doesn't fit at all—it has zero overlap. That perfect mismatch tells you the piece actually belongs to the real signal puzzle. In MUSIC, this total misfit with the noise space leads to a sharp peak in the spectrum, revealing the true direction of the signal.</p>
+
+            <h2>Applications in Modern Systems</h2>
+
+            <p>MUSIC enables 5G networks to pinpoint user locations precisely, boosting data rates and cutting interference. It helps base stations focus signals directly at devices instead of broadcasting broadly. In WiFi, MUSIC has been applied for indoor tracking and even through-wall sensing by analyzing signal reflections.</p>
+
+            <p>Recently, MUSIC has become important in joint communication and sensing (JCAS) systems, especially in automotive radar and 6G research. MUSIC allows systems to identify object directions while maintaining reliable data transmission.</p>
+
+            <h2>Takeaway</h2>
+
+            <p>MUSIC is a clever and efficient method that helps modern wireless systems detect where signals come from. It enables 5G and WiFi to perform better by accurately finding user directions.</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
+        </div>
+    </div>
+</body>
+</html>
