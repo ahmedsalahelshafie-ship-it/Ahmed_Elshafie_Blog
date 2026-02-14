@@ -38,15 +38,16 @@ Ahmed_Elshafie_Blog/
 
 ## Navigation / Tab System
 
-The header has three top-level tabs handled by `UI/script.js` (`showTab()`):
+The header has four top-level tabs handled by `UI/script.js` (`showTab()`):
 
-| Tab | Shows | Hides |
-|-----|-------|-------|
-| **Articles** (default) | `#articles-section` + `#categories-section` | podcasts, about |
-| **Podcasts** | `#podcasts-section` | articles, about |
-| **About** | `#about-section` | articles, podcasts |
+| Tab | `data-tab` | Shows | Notes |
+|-----|-----------|-------|-------|
+| **Home** (default) | `home` | `#featured-section` + `#articles-section` (first 5 cards only) | No search, no categories |
+| **Articles** | `articles` | `#categories-section` + `#articles-search-wrap` + `#articles-filter-bar` + `#articles-section` (all cards) | Full search + filter |
+| **Podcasts** | `podcasts` | `#podcasts-section` | |
+| **About** | `about` | `#about-section` | |
 
-Each `<a>` in `.nav-categories` has a `data-tab="articles|podcasts|about"` attribute that drives this.
+Each `<a>` in `.nav-categories` has a `data-tab` attribute that drives `showTab()`. `showTab('home')` is called on `DOMContentLoaded` to set the correct initial state.
 
 ## Content Database (`data/content.jsonl`)
 
@@ -171,6 +172,18 @@ Every article and podcast has one JSON line. This is the **single source of trut
 - `troubleshooting` — troubleshooting guides
 - `iot` — IoT / smart home
 
+## Articles Tab — Filter Bar
+
+Below the search box, the Articles tab has:
+- **Category chips** (`#category-chips`) — built from DOM card tags at `DOMContentLoaded`, one chip per unique category + "All". Click to filter visible cards.
+- **Sort buttons** (`.sort-btn`) — Default (DOM order) / Newest / Oldest, sorted by parsing the date span inside `.card-meta`.
+
+Both are inside `#articles-filter-bar` and hidden on the Home tab.
+
+## Featured Article
+
+`#featured-section` — a dark hero card linking to "What Really Happens Between Transmission and Reception?" with `Articles/Images/Wireless_communcation_system.png`. Shown only on the **Home** tab, placed above the articles list.
+
 ## Sidebar Widgets
 
 | Widget | Status |
@@ -178,7 +191,6 @@ Every article and podcast has one JSON line. This is the **single source of trut
 | 🎙 Podcasts to Listen To | Active — up to 10 items, play/pause + progress bar |
 | 📬 Weekly Newsletter | "Coming Soon" placeholder |
 | 📚 Good Reads | Active — 6 curated article links |
-| 📢 Advertisement | Placeholder |
 
 ## Search System
 
