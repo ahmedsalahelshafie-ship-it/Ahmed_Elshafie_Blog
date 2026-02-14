@@ -21,28 +21,21 @@
                 <span class="logo-icon">📡</span>
                 <h1>Wireless<span class="highlight">Hub</span></h1>
             </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search tutorials, guides...">
-                <button class="search-btn">🔍</button>
-            </div>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle">🌙</button> 
                 <button class="cta-btn">Subscribe</button>
             </div>
         </nav>
         <div class="nav-categories">
-            <a href="#all" class="category-link active">All</a>
-            <a href="#wifi" class="category-link">WiFi</a>
-            <a href="#bluetooth" class="category-link">Bluetooth</a>
-            <a href="#5g" class="category-link">5G/LTE</a>
-            <a href="#iot" class="category-link">IoT</a>
-            <a href="#security" class="category-link">Security</a>
-            <a href="#troubleshooting" class="category-link">Troubleshooting</a>
+            <a href="#" class="category-link active" data-tab="home">Home</a>
+            <a href="#articles" class="category-link" data-tab="articles">Articles</a>
+            <a href="#podcasts" class="category-link" data-tab="podcasts">Podcasts</a>
+            <a href="#about" class="category-link" data-tab="about">About</a>
         </div>
     </header>
 
     <!-- About Section -->
-    <section class="about-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 60px 20px; margin-bottom: 40px;">
+    <section id="about-section" class="about-section tab-section" style="display:none; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 60px 20px; margin-bottom: 40px;">
         <div class="container" style="max-width: 1200px; margin: 0 auto;">
             <div style="background: white; border-radius: 16px; padding: 50px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
                 <div style="text-align: center; margin-bottom: 30px;">
@@ -67,39 +60,107 @@
                         Throughout his career, Ahmed has been honored with several academic and professional accolades, including the David Daniel Best Doctoral Thesis Award, the Jonsson School Industrial Advisory Council Fellowship Award, and the IEEE Transactions on Communications Exemplary Reviewer Award for three consecutive years (2015–2017), among others. He was also nominated for the CGS/ProQuest Distinguished Dissertation Award.
                     </p>
 
-                    <p style="margin-bottom: 0;">
+                    <p style="margin-bottom: 20px;">
                         He actively contributes to the research community through multiple editorial positions, currently serving as an Editor for the IEEE Transactions on Communications, IEEE Communications Surveys & Tutorials, and the IEEE Internet of Things Journal, as well as a Senior Editor for IEEE Communications Letters. His past editorial experience includes service with Physical Communications, the IEEE Open Journal of the Communications Society, and Transactions on Emerging Telecommunications Technologies, along with a guest editorship for the IEEE Transactions on Cognitive Communications and Networking.
                     </p>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #e2e8f0; margin-top: 10px;">
+                        <a href="https://www.linkedin.com/in/ahmed-elshafie-39327225/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.5rem; background:#0a66c2; color:white; padding:0.55rem 1.2rem; border-radius:8px; font-weight:600; font-size:0.9rem; text-decoration:none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/ahmedsalahelshafie-ship-it/Ahmed_Elshafie_Blog" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.5rem; background:#24292f; color:white; padding:0.55rem 1.2rem; border-radius:8px; font-weight:600; font-size:0.9rem; text-decoration:none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            GitHub
+                        </a>
+                        <a href="https://hisham-abuella.github.io/home/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.5rem; background:#667eea; color:white; padding:0.55rem 1.2rem; border-radius:8px; font-weight:600; font-size:0.9rem; text-decoration:none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            Designed by Hisham Abuella
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Hero/Featured Article -->
-    <section class="hero-section">
+    <!-- Podcasts Section -->
+    <section id="podcasts-section" class="tab-section" style="display:none; padding: 60px 20px;">
         <div class="container">
-            <div class="article-card">
-                <div class="card-tag wireless">Wireless</div>
-                <h3 class="card-title">What Really Happens Between Transmission and Reception?</h3>
-                <p class="card-excerpt">Understanding the messy reality of wireless communication beyond textbook models.</p>
-                <div class="card-meta">
-                    <span>12 min read</span>
-                    <span>•</span>
-                    <span>Jan 20, 2025</span>
+            <h2 class="section-title">🎙 Podcasts</h2>
+            <div class="search-box" style="max-width:600px; margin-bottom:2rem;">
+                <input type="text" id="podcasts-search" class="search-input" placeholder="Search podcasts by title or keyword…" autocomplete="off">
+                <span class="search-icon">🔍</span>
+            </div>
+            <div id="podcasts-search-results" class="search-results-list" style="display:none;"></div>
+            <div class="podcasts-grid" id="podcasts-default-grid">
+
+                <div class="podcast-card">
+                    <div class="podcast-episode-badge">Episode 1</div>
+                    <h3 class="podcast-title">What Really Happens Between Transmission and Reception?</h3>
+                    <p class="podcast-desc">Understanding the messy reality of wireless communication beyond textbook models.</p>
+                    <audio class="podcast-player" controls>
+                        <source src="podcasts/2p_wireless_channel_generated.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <a href="Articles/wireless-transmission-reception.html" class="podcast-article-link">Read the article →</a>
                 </div>
+
             </div>
         </div>
-        
+    </section>
+
+    <!-- Categories Showcase -->
+    <section id="categories-section" class="categories-section tab-section">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="category-grid" id="category-grid">
+                <!-- Populated dynamically from data/content.jsonl -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section id="featured-section" class="tab-section" style="padding: 0 20px 0;">
+        <div class="container" style="max-width:1200px; margin:0 auto;">
+            <a href="Articles/wireless-transmission-reception.html" class="featured-article-card" style="display:flex; gap:0; border-radius:16px; overflow:hidden; text-decoration:none; box-shadow:0 8px 32px rgba(0,0,0,0.12); background:linear-gradient(135deg,#0f172a 60%,#1e3a5f 100%); min-height:240px; margin-bottom:0; position:relative;">
+                <div style="flex:1; padding:2.5rem 2.5rem 2rem; display:flex; flex-direction:column; justify-content:center; z-index:1;">
+                    <span style="display:inline-block; background:rgba(99,179,237,0.18); color:#63b3ed; font-size:0.75rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:0.3rem 0.8rem; border-radius:20px; margin-bottom:1rem; width:fit-content;">Featured Article · Wireless</span>
+                    <h2 style="color:#f1f5f9; font-size:1.6rem; font-weight:800; line-height:1.25; margin-bottom:0.75rem;">What Really Happens Between Transmission and Reception?</h2>
+                    <p style="color:#94a3b8; font-size:0.95rem; line-height:1.6; margin-bottom:1.25rem; max-width:520px;">Understanding the messy reality of wireless communication beyond textbook models — multipath, fading, and what engineers actually deal with.</p>
+                    <div style="display:flex; align-items:center; gap:1rem;">
+                        <span style="display:inline-flex; align-items:center; gap:0.4rem; background:linear-gradient(90deg,#667eea,#764ba2); color:white; padding:0.5rem 1.2rem; border-radius:8px; font-weight:700; font-size:0.85rem;">Read Article →</span>
+                        <span style="color:#64748b; font-size:0.82rem;">12 min read · Jan 20, 2025</span>
+                    </div>
+                </div>
+                <div style="width:340px; min-height:240px; flex-shrink:0; position:relative; overflow:hidden;">
+                    <img src="Articles/Images/Wireless_communcation_system.png" alt="Wireless Communication System" style="width:100%; height:100%; object-fit:cover; opacity:0.75; display:block;">
+                    <div style="position:absolute; inset:0; background:linear-gradient(to right, #0f172a 0%, transparent 40%);"></div>
+                </div>
+            </a>
+        </div>
     </section>
 
     <!-- Main Content Grid -->
-    <section class="content-section">
+    <section id="articles-section" class="content-section tab-section">
         <div class="container">
             <div class="content-grid">
 
                 <!-- Main Articles Column -->
                 <div class="articles-column">
-                    <h2 class="section-title">Latest Articles</h2>
+                    <div class="search-box" id="articles-search-wrap">
+                        <input type="text" id="articles-search" class="search-input" placeholder="Search articles by title or keyword…" autocomplete="off">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <div id="articles-filter-bar" class="articles-filter-bar" style="display:none;">
+                        <div id="category-chips" class="category-chips"></div>
+                        <div class="sort-controls">
+                            <button class="sort-btn active" data-sort="default">Default</button>
+                            <button class="sort-btn" data-sort="newest">Newest</button>
+                            <button class="sort-btn" data-sort="oldest">Oldest</button>
+                        </div>
+                    </div>
+                    <div id="articles-search-results" class="search-results-list" style="display:none;"></div>
+                    <h2 class="section-title" id="articles-default-heading">Latest Articles</h2>
 
                     <div class="article-card">
                         <div class="card-tag wireless">Wireless</div>
@@ -288,91 +349,39 @@
                         </div>
                     </div>
 
-                    <div class="article-card">
-                        <div class="card-tag wifi">WiFi</div>
-                        <h3 class="card-title">Understanding WiFi 6E: What You Need to Know</h3>
-                        <p class="card-excerpt">The latest WiFi standard brings 6GHz spectrum support. Here's how it affects your network performance.</p>
-                        <div class="card-meta">
-                            <span>5 min read</span>
-                            <span>•</span>
-                            <span>Jan 15, 2025</span>
-                        </div>
-                    </div>
-
-                    <div class="article-card">
-                        <div class="card-tag security">Security</div>
-                        <h3 class="card-title">5 Common WiFi Security Mistakes to Avoid</h3>
-                        <p class="card-excerpt">Protect your wireless network from unauthorized access with these essential security practices.</p>
-                        <div class="card-meta">
-                            <span>8 min read</span>
-                            <span>•</span>
-                            <span>Jan 12, 2025</span>
-                        </div>
-                    </div>
-
-                    <div class="article-card">
-                        <div class="card-tag bluetooth">Bluetooth</div>
-                        <h3 class="card-title">Bluetooth 5.3: Everything About the Latest Version</h3>
-                        <p class="card-excerpt">Improved range, better audio quality, and enhanced power efficiency - discover the new features.</p>
-                        <div class="card-meta">
-                            <span>6 min read</span>
-                            <span>•</span>
-                            <span>Jan 10, 2025</span>
-                        </div>
-                    </div>
-
-                    <div class="article-card">
-                        <div class="card-tag troubleshooting">Troubleshooting</div>
-                        <h3 class="card-title">Why Is My WiFi Slow? 12 Ways to Fix It</h3>
-                        <p class="card-excerpt">Diagnose and solve common WiFi speed issues with our comprehensive troubleshooting guide.</p>
-                        <div class="card-meta">
-                            <span>10 min read</span>
-                            <span>•</span>
-                            <span>Jan 8, 2025</span>
-                        </div>
-                    </div>
-
-                    <div class="article-card">
-                        <div class="card-tag iot">IoT</div>
-                        <h3 class="card-title">Setting Up a Smart Home: Wireless Basics</h3>
-                        <p class="card-excerpt">Learn the fundamentals of connecting and managing IoT devices in your home network.</p>
-                        <div class="card-meta">
-                            <span>12 min read</span>
-                            <span>•</span>
-                            <span>Jan 5, 2025</span>
-                        </div>
-                    </div>
 
                 </div>
 
                 <!-- Sidebar -->
                 <aside class="sidebar">
 
-                    <!-- Trending Posts -->
+                    <!-- Sidebar Podcasts -->
                     <div class="sidebar-widget">
-                        <h3 class="widget-title">🔥 Trending This Week</h3>
-                        <div class="trending-list">
-                            <div class="trending-item">
-                                <span class="trending-number">1</span>
-                                <div>
-                                    <h4>Best WiFi Routers 2025</h4>
-                                    <span class="trending-views">25K views</span>
+                        <h3 class="widget-title">🎙 Podcasts to Listen To</h3>
+                        <div class="sidebar-podcast-list">
+
+                            <div class="sidebar-podcast-item">
+                                <div class="sidebar-podcast-meta">
+                                    <span class="sidebar-podcast-num">1</span>
+                                    <span class="sidebar-podcast-title">What Really Happens Between Transmission and Reception?</span>
+                                </div>
+                                <audio class="sidebar-podcast-audio" src="podcasts/2p_wireless_channel_generated.wav" preload="none"></audio>
+                                <div class="sidebar-podcast-actions">
+                                    <button class="sidebar-play-btn" onclick="toggleSidebarAudio(this)">▶ Play</button>
+                                </div>
+                                <div class="sidebar-podcast-progress-wrap">
+                                    <div class="sidebar-podcast-progress-bar">
+                                        <div class="sidebar-podcast-progress-fill"></div>
+                                    </div>
+                                    <div class="sidebar-podcast-time">
+                                        <span class="sidebar-time-current">0:00</span>
+                                        <span class="sidebar-time-total">--:--</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="trending-item">
-                                <span class="trending-number">2</span>
-                                <div>
-                                    <h4>Mesh vs Traditional Router</h4>
-                                    <span class="trending-views">18K views</span>
-                                </div>
-                            </div>
-                            <div class="trending-item">
-                                <span class="trending-number">3</span>
-                                <div>
-                                    <h4>5G Home Internet Review</h4>
-                                    <span class="trending-views">15K views</span>
-                                </div>
-                            </div>
+
+                            <!-- Up to 10 podcast items can be added here -->
+
                         </div>
                     </div>
 
@@ -380,70 +389,25 @@
                     <div class="sidebar-widget newsletter">
                         <h3 class="widget-title">📬 Weekly Newsletter</h3>
                         <p>Get the latest wireless tech tips delivered to your inbox.</p>
-                        <input type="email" placeholder="Your email" class="newsletter-input">
-                        <button class="newsletter-btn">Subscribe</button>
+                        <div class="newsletter-coming-soon">🚧 Coming Soon</div>
                     </div>
 
-                    <!-- Quick Links -->
+                    <!-- Good Reads -->
                     <div class="sidebar-widget">
-                        <h3 class="widget-title">📚 Popular Guides</h3>
+                        <h3 class="widget-title">📚 Good Reads</h3>
                         <ul class="quick-links">
-                            <li><a href="#">WiFi Setup Checklist</a></li>
-                            <li><a href="#">Router Placement Guide</a></li>
-                            <li><a href="#">Network Speed Testing</a></li>
-                            <li><a href="#">Wireless Standards Explained</a></li>
-                            <li><a href="#">Signal Boosting Tips</a></li>
+                            <li><a href="Articles/wireless-transmission-reception.html">What Really Happens Between Transmission and Reception?</a></li>
+                            <li><a href="Articles/fft-everyday-life.html">The Beauty of FFT in Everyday Life</a></li>
+                            <li><a href="Articles/wireless-evolution-siso-mimo.html">From SISO to MIMO</a></li>
+                            <li><a href="Articles/gps-relativity.html">How Relativity Keeps GPS Accurate</a></li>
+                            <li><a href="Articles/eigenvalues-eigenvectors-everyday-life.html">Eigenvalues & Eigenvectors in Everyday Life</a></li>
+                            <li><a href="Articles/deep-learning-activation-functions.html">The Design That Made Deep Learning Practical</a></li>
                         </ul>
                     </div>
 
-                    <!-- Ad Space -->
-                    <div class="sidebar-widget ad-widget">
-                        <div class="ad-placeholder">
-                            <p>📢 Advertisement</p>
-                        </div>
-                    </div>
 
                 </aside>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Showcase -->
-    <section class="categories-section">
-        <div class="container">
-            <h2 class="section-title">Browse by Category</h2>
-            <div class="category-grid">
-                <div class="category-card">
-                    <div class="category-icon">📶</div>
-                    <h3>WiFi Technology</h3>
-                    <p>45 articles</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">🔵</div>
-                    <h3>Bluetooth</h3>
-                    <p>28 articles</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">📡</div>
-                    <h3>5G & LTE</h3>
-                    <p>32 articles</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">🏠</div>
-                    <h3>Smart Home</h3>
-                    <p>38 articles</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">🔐</div>
-                    <h3>Security</h3>
-                    <p>41 articles</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">🔧</div>
-                    <h3>Troubleshooting</h3>
-                    <p>52 articles</p>
-                </div>
             </div>
         </div>
     </section>
@@ -457,27 +421,27 @@
                     <p>Making wireless technology simple and accessible for everyone.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Explore</h4>
                     <ul>
-                        <li><a href="#">All Guides</a></li>
-                        <li><a href="#">Get Started</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Categories</h4>
-                    <ul>
-                        <li><a href="#">WiFi</a></li>
-                        <li><a href="#">Bluetooth</a></li>
-                        <li><a href="#">5G</a></li>
+                        <li><a href="#articles" onclick="document.querySelector('[data-tab=\'articles\']').click()">Articles</a></li>
+                        <li><a href="#podcasts" onclick="document.querySelector('[data-tab=\'podcasts\']').click()">Podcasts</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Connect</h4>
-                    <div class="social-links">
-                        <a href="#">Twitter</a>
-                        <a href="#">YouTube</a>
-                        <a href="#">GitHub</a>
+                    <div class="social-links" style="display:flex; flex-direction:column; gap:0.6rem;">
+                        <a href="https://www.linkedin.com/in/ahmed-elshafie-39327225/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; color:inherit;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0a66c2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            <span>Ahmed Elshafie</span><span style="font-size:0.75rem; font-weight:600; background:rgba(99,179,237,0.15); color:#0a66c2; padding:0.15rem 0.5rem; border-radius:20px; margin-left:0.3rem;">Editor</span>
+                        </a>
+                        <a href="https://github.com/ahmedsalahelshafie-ship-it/Ahmed_Elshafie_Blog" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; color:inherit;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            <span>Code Repository</span>
+                        </a>
+                        <a href="https://hisham-abuella.github.io/home/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; color:inherit;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            <span>Designed by Hisham Abuella</span>
+                        </a>
                     </div>
                 </div>
             </div>
