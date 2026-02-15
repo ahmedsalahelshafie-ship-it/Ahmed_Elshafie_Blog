@@ -15,7 +15,7 @@ Ahmed_Elshafie_Blog/
 ├── data/
 │   └── content.jsonl       # Source of truth for all articles and podcasts (search database)
 ├── podcasts/               # Audio files (.wav)
-│   └── 2p_wireless_channel_generated.wav
+│   └── e1_{podcast_name}.wav
 ├── Articles/               # Individual article HTML files (25 articles)
 │   ├── *.html              # One file per article
 │   ├── Images/             # Article images
@@ -249,8 +249,9 @@ Both are inside `#articles-filter-bar` and hidden on the Home tab.
 
 🎙 = has a linked podcast episode
 
-## Existing Podcasts (1 total, as of Feb 2026)
+## Existing Podcasts (2 total, as of Feb 2026)
 
 | Episode | File | Linked Article |
 |---------|------|----------------|
-| 1 | `2p_wireless_channel_generated.wav` | `wireless-transmission-reception` |
+| 1 | `e1_wireless_channel.wav` | `wireless-transmission-reception` |
+| 1 | `e2_snr_in_real_life.wav` | `snr-in-real-life` |
