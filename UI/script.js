@@ -530,12 +530,4 @@ function toggleSidebarAudio(btn) {
     }, { once: true });
 }
 
-// GoatCounter visitor counter (uses count.js built-in API to avoid CORS issues)
-var _gcTimer = setInterval(function() {
-    if (window.goatcounter && window.goatcounter.visit_count) {
-        clearInterval(_gcTimer);
-        window.goatcounter.visit_count({append: '#visitor-counter'});
-    }
-}, 100);
-
 console.log('🚀 WirelessHub loaded successfully!');
