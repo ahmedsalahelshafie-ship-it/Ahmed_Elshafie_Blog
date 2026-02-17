@@ -530,21 +530,12 @@ function toggleSidebarAudio(btn) {
     }, { once: true });
 }
 
-// GoatCounter visitor counter
-(function() {
-    var el = document.getElementById('visitor-counter');
-    if (!el) return;
-    var r = new XMLHttpRequest();
-    r.open('GET', 'https://wirelesshub.goatcounter.com/counter/' + encodeURIComponent(location.pathname) + '.json');
-    r.onload = function() {
-        if (r.status === 200) {
-            try {
-                var data = JSON.parse(r.responseText);
-                el.textContent = data.count.toLocaleString() + ' visitors';
-            } catch (e) { /* ignore parse errors */ }
-        }
-    };
-    r.send();
-})();
+// GoatCounter visitor counter (uses count.js built-in API to avoid CORS issues)
+var _gcTimer = setInterval(function() {
+    if (window.goatcounter && window.goatcounter.visit_count) {
+        clearInterval(_gcTimer);
+        window.goatcounter.visit_count({append: '#visitor-counter'});
+    }
+}, 100);
 
 console.log('🚀 WirelessHub loaded successfully!');
