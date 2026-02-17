@@ -96,7 +96,7 @@ Every article and podcast has one JSON line. This is the **single source of trut
 - Do not leave trailing commas or add a closing `]` — it is **not** a JSON array
 
 ### Adding a New Article (checklist)
-1. Create `Articles/<slug>.html` using `Articles/article.html` as the template
+1. Create `Articles/<slug>.html` using `Articles/template_article.html` as the template
 2. Add `<link rel="stylesheet" href="../Articles/article-styles.css">` and `<script src="../Articles/script.js">` (paths relative to the file)
 3. Add a `<div class="article-card">` in `index.html` inside `.articles-column` (insert at the top for newest-first ordering)
 4. Append a new line to `data/content.jsonl` with `"type":"article"` and all required fields
@@ -216,6 +216,18 @@ Both are inside `#articles-filter-bar` and hidden on the Home tab.
 - **Podcast players** — sidebar mini-player (play/pause, progress bar, scrub, time); full player in Podcasts tab
 - **Search** — live keyword search from JSONL database in Articles and Podcasts tabs
 - **Newsletter** — "Coming Soon" state (no form yet)
+- **Analytics** — [GoatCounter](https://www.goatcounter.com/) (privacy-friendly, no cookies). Script tag in every HTML file just before `</body>`. Dashboard: `https://wirelesshub.goatcounter.com`
+
+### GoatCounter Analytics
+
+Every HTML page (index.html + all article pages) includes this snippet before `</body>`:
+
+```html
+<script data-goatcounter="https://wirelesshub.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+```
+
+When adding a new article, include this snippet before `</body>` in the new HTML file.
 
 ## Existing Articles (25 total, as of Feb 2026)
 

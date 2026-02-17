@@ -530,4 +530,21 @@ function toggleSidebarAudio(btn) {
     }, { once: true });
 }
 
+// GoatCounter visitor counter
+(function() {
+    var el = document.getElementById('visitor-counter');
+    if (!el) return;
+    var r = new XMLHttpRequest();
+    r.open('GET', 'https://wirelesshub.goatcounter.com/counter/' + encodeURIComponent(location.pathname) + '.json');
+    r.onload = function() {
+        if (r.status === 200) {
+            try {
+                var data = JSON.parse(r.responseText);
+                el.textContent = data.count.toLocaleString() + ' visitors';
+            } catch (e) { /* ignore parse errors */ }
+        }
+    };
+    r.send();
+})();
+
 console.log('🚀 WirelessHub loaded successfully!');

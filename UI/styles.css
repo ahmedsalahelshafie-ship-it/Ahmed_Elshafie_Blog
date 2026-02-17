@@ -666,6 +666,12 @@ body {
     color: var(--text-tertiary);
 }
 
+.visitor-counter {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
 /* Search Box */
 .search-box {
     position: relative;
