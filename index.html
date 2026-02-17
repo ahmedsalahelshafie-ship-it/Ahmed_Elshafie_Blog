@@ -485,7 +485,7 @@
             </div>
             <div class="footer-bottom">
                 <p>© 2025 WirelessHub. Made with 💙 for tech enthusiasts.</p>
-
+                <p id="gc-counter" style="margin-top:0.5rem;font-size:0.7rem;opacity:0.5;"></p>
             </div>
         </div>
     </footer>
@@ -493,5 +493,14 @@
     <script src="UI/script.js"></script>
     <script data-goatcounter="https://wirelesshub.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
+    <script>
+    var _t = setInterval(function() {
+        if (window.goatcounter && window.goatcounter.visit_count) {
+            clearInterval(_t);
+            window.goatcounter.visit_count({append: '#gc-counter', no_branding: true});
+        }
+    }, 100);
+    setTimeout(function() { clearInterval(_t); }, 5000);
+    </script>
 </body>
 </html>
